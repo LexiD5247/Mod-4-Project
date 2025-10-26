@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Navigation Bar Styles*/
+
+.nav__container{
+    width: 100%;
+    padding-top: 20px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav__logo--img{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+.nav__title{
+    font-size: 30px;
+    color: rgb(31, 97, 56);
+    font-weight: bold;
+}
+
+.bg__img{
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.header__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: rgb(31, 97, 56)
+}
+
+.btn__search{
+    padding: 10px 20px;
+    background-color: rgb(31, 97, 56);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
