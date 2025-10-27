@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Library</title>
+    <title>Movie Time</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/09ccc72bfc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <nav>
     <div class="nav__container">
-        <img src="./assets/book-img.jpg" alt="" class="bg__img">
+        <img src="./assets/moviepicutre.jpg" alt="" class="bg__img">
         <div class="nav__logo">
-            <img src="./assets/Screenshot 2025-10-24 at 2.43.39 PM.png" alt="" class="nav__logo--img">
-            <div class="nav__logo--title">The library</div>
+            <img src="./assets/movie__tape.png" class="nav__logo--img">
+            <div class="nav__logo--title">FlickFinder</div>
         </div>
         <div class="nav__links">
             <a href="#" class="nav__link">Home</a>
-            <a href="#" class="nav__link">Books</a>
-            <a href="#" class="nav__link--primary">Contact</a>
+            <a href="#" class="nav__link">Movies</a>
+            <a href="#" class="nav__link nav__link--primary">Contact</a>
         </div>
         <button class="btn__menu" onclick="openMenu()">
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
+    <div class="menu__backdrop">
+        <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fa-solid fa-x"></i>
+        </button>
+        <div class="menu__links">
+            <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
+            <a href="#movies" class="menu__link" onclick="closeMenu()">Movies</a>
+            <a href="#contact" class="menu__link menu__link--primary" onclick="closeMenu()">Contact</a>
+        </div>
+    </div>
+    </nav>
     <header>
         <div class="header__container">
             <div class="header__row">
-                <h1 class="header__title">Lets Find a Book</h1>
-                <input type="text" class="search__bar" placeholder="Search for books...">
+                <h1 class="header__title">Find Your Next Favorite Flick</h1>
+                <input type="text" class="search__bar" placeholder="Search movies...">
             </div>
         </div>
     </header>

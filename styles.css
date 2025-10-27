@@ -1,14 +1,29 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
+
+button{
+    cursor: pointer;
+}
+
+.btn__menu{
+    max-height:100vh;
+    overflow: hidden;
+}
+
+
 
 /*Navigation Bar Styles*/
 
 .nav__container{
     width: 100%;
-    padding-top: 20px;
+    padding-top: 32px;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
@@ -16,41 +31,156 @@
     margin: 0 auto;
 }
 
+.nav__logo{
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    font-weight: 900;
+    color:black;
+    font-size: 24px;
+    padding-bottom: 2px;
+    letter-spacing: 0.8px;
+}
+
 .nav__logo--img{
     display: flex;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    mix-blend-mode:multiply;
 }
 
-.nav__title{
-    font-size: 30px;
-    color: rgb(31, 97, 56);
-    font-weight: bold;
+.nav__links{
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.nav__link{
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.35px;
+    position: relative;
+    text-decoration: none;
+    padding: 4px;
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.35px;
+    transition: all 0.3s ease;
+    margin: 0 24px;
+}
+
+.nav__link--primary{
+    margin: 0;
+    background-color: rgb(173, 18, 18);
+    color: white;
+    padding: 10px 32px;
+    border-radius: 9999px;
+    margin-top: 2px;
+    line-height: 1.5;
+    border: none;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    border: none;
+    color: black;
+    display: none;
+    justify-content: end;
+}
+
+.menu__backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 240px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(300%);
+    transition: all 0.3s ease;
+}
+
+.btn__menu--close{
+    position: fixed;
+    top: 40px;
+    right: 30px;
+    padding: 8px;
+    color: black;
+    font-size: 16px;
+}
+
+.menu__links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__link{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu__link--primary{
+    color: white;
+    padding: 12px 32px;
+    background: rgb(173, 18, 18);
+    border-radius: 500px;
+    border: none;
+
 }
 
 .bg__img{
     width: 100%;
+    object-fit: cover;
+    margin-top: 20px;
     position: absolute;
+    z-index: -1;
     opacity: 0.5;
 }
 
-.header__title{
-    display: flex;
-    justify-content: center;
+.header__row{
     align-items: center;
+}
+
+.header__title{
     font-size: 50px;
     color: rgb(31, 97, 56)
 }
 
-.btn__search{
+.search__bar{
     padding: 10px 20px;
-    background-color: rgb(31, 97, 56);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+@media (max-width: 1024px){
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu{
+        display: block;
+    }
 }
