@@ -12,6 +12,16 @@ button{
     cursor: pointer;
 }
 
+h1{
+    font-size: 56px;
+    color: black;
+    margin-bottom: 24px;
+}
+
+.red{
+    color: rgb(173, 18, 18);
+}
+
 .btn__menu{
     max-height:100vh;
     overflow: hidden;
@@ -54,6 +64,7 @@ button{
     display: flex;
     align-items: center;
     padding-bottom: 2px;
+    margin-right: 12px;
 }
 
 .nav__link{
@@ -90,6 +101,7 @@ button{
     color: black;
     display: none;
     justify-content: end;
+    margin-right: 12px;
 }
 
 .menu__backdrop{
@@ -152,28 +164,70 @@ button{
     width: 100%;
     object-fit: cover;
     margin-top: 20px;
-    position: absolute;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.6;
+    position: absolute;
 }
+
+/*Header Styles*/
 
 .header__row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+}
+
+.header__btn{
+    width: 100%;
+    max-width: 448px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
-
-.header__title{
-    font-size: 50px;
-    color: rgb(31, 97, 56)
-}
-
 .search__bar{
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
+    text-align: left;
+    width: 100%;
+    border-radius: 500px;
+    border: 2px solid rgb(209, 213, 219);
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 20px 192px 20px 32px;
+    transition: border-color 0.3s ease;
 }
+
+.header__search--btn{
+    z-index: 2;
+    margin: 8px;
+    width: 50px;
+    height: calc(100% - 16px);
+    border-radius: 500px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(173, 18, 18);
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+
+
 
 @media (max-width: 1024px){
     .nav__links{
@@ -182,5 +236,36 @@ button{
 
     .btn__menu{
         display: block;
+    }
+
+    .header__row{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__description{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+@media (max-width: 640px){
+
+    .search__bar{
+        position: static;
+        padding: 16px 0;
+        padding-left: 32px;
+        line-height: 1.5;
+    }
+
+    .header__search--btn{
+        width: 100%;
+        padding: 16px 0;
+        margin: 16px 0;
+        margin-bottom: 0px;
+        line-height: 1.5;
     }
 }
