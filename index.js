@@ -1,7 +1,22 @@
-function fetchMovies() {
+function fetchMovies(filter) {
   const moviesWrapper = document.querySelector('.movies');
 
   const movies = getMovies();
+
+  
+  if (filter === 'A_TO_Z') {
+    movies.sort((a, b) => a.Title.localeCompare(b.Title));
+  }
+  else if (filter === 'Z_TO_A') {
+    movies.sort((a, b) => b.Title.localeCompare(a.Title));
+  }
+else if (filter === 'YEAR_ASC') {
+    movies.sort((a, b) => a.Year.localeCompare(b.Year));
+  }
+  else if (filter === 'YEAR_DESC') {
+    movies.sort((a, b) => b.Year.localeCompare(a.Year));
+  }
+
 
   const moviesHTML = movies.map((movie) => {
      return `<div class="movie">
@@ -13,9 +28,11 @@ function fetchMovies() {
   </div>`
   }).join('');
 
-  moviesWrapper.innerHTML = moviesHTML
-  console.log(moviesHTML)
-  
+  moviesWrapper.innerHTML = moviesHTML;
+}
+
+function filterMovies(event) {
+    fetchMovies(event.target.value)
 }
 
 setTimeout(() => {
@@ -82,7 +99,7 @@ function getMovies() {
     },
     {
       "Title": "Love, Death & Robots",
-      "Year": "2019–",
+      "Year": "2019",
       "imdbID": "tt9561862",
       "Type": "series",
       "Poster": "https://m.media-amazon.com/images/M/MV5BZDY3OTZiYzktN2U5My00MzRhLWJiZjItZjNlZmM3OGViZmFiXkEyXkFqcGc@._V1_SX300.jpg"
