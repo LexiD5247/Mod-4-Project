@@ -1,7 +1,14 @@
-function fetchMovies(filter) {
+let movies;
+
+async function fetchMovies(filter) {
   const moviesWrapper = document.querySelector('.movies');
 
-  const movies = getMovies();
+  moviesWrapper.classList += ' movies__loading'
+  if (!movies) {
+    movies =  await getMovies();
+  }
+
+  moviesWrapper.classList.remove('movies__loading')
 
   
   if (filter === 'A_TO_Z') {
@@ -41,8 +48,10 @@ setTimeout(() => {
 
 // FAKE DATA
 function getMovies() {
-  return [
-    {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([  
+      {
       id: 1,
       Title: "Crazy, Stupid, Love.",
       Year: "2011",
@@ -60,14 +69,6 @@ function getMovies() {
     },
     {
       id: 3,
-      Title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-      Year: "1964",
-      imdbID: "tt0057012",
-      Type: "movie",
-      Poster: "https://m.media-amazon.com/images/M/MV5BMjFjYzBlOTktMTI2OS00ZWVhLTgxMDUtNzAwODY2NmI3YTAzXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      id: 4,
       Title: "Thor: Love and Thunder",
       Year: "2022",
       imdbID: "tt10648342",
@@ -75,7 +76,7 @@ function getMovies() {
       Poster: "https://m.media-amazon.com/images/M/MV5BZjRiMDhiZjQtNjk5Yi00ZDcwLTkyYTEtMDc1NjdmNjFhNGIzXkEyXkFqcGc@._V1_SX300.jpg"
     },
     {
-      id: 5,
+      id: 4,
       Title: "Love & Other Drugs",
       Year: "2010",
       imdbID: "tt0758752",
@@ -83,7 +84,7 @@ function getMovies() {
       Poster: "https://m.media-amazon.com/images/M/MV5BMTgxOTczODEyMF5BMl5BanBnXkFtZTcwMDc0NDY4Mw@@._V1_SX300.jpg"
     },
     {
-      id: 6,
+      id: 5,
       Title: "Shakespeare in Love",
       Year: "1998",
       imdbID: "tt0138097",
@@ -91,32 +92,30 @@ function getMovies() {
       Poster: "https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00NWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_SX300.jpg"
     },
     {
-      "Title": "P.S. I Love You",
-      "Year": "2007",
-      "imdbID": "tt0431308",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNTg2MDg4MjI5NV5BMl5BanBnXkFtZTcwMzQ0MDczMw@@._V1_SX300.jpg"
+      id: 6,
+      Title: "P.S. I Love You",
+      Year: "2007",
+      imdbID: "tt0431308",
+      Type: "movie",
+      Poster: "https://m.media-amazon.com/images/M/MV5BNTg2MDg4MjI5NV5BMl5BanBnXkFtZTcwMzQ0MDczMw@@._V1_SX300.jpg"
     },
     {
-      "Title": "Love, Death & Robots",
-      "Year": "2019",
-      "imdbID": "tt9561862",
-      "Type": "series",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZDY3OTZiYzktN2U5My00MzRhLWJiZjItZjNlZmM3OGViZmFiXkEyXkFqcGc@._V1_SX300.jpg"
+      id: 7,
+      Title: "Love, Death & Robots",
+      Year: "2019",
+      imdbID: "tt9561862",
+      Type: "series",
+      Poster: "https://m.media-amazon.com/images/M/MV5BZDY3OTZiYzktN2U5My00MzRhLWJiZjItZjNlZmM3OGViZmFiXkEyXkFqcGc@._V1_SX300.jpg"
     },
     {
-      "Title": "I Love You, Man",
-      "Year": "2009",
-      "imdbID": "tt1155056",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTU4MjI5NTEyNV5BMl5BanBnXkFtZTcwNjQ1NTMzMg@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Punch-Drunk Love",
-      "Year": "2002",
-      "imdbID": "tt0272338",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZTYyMTQ2MDAtMzYzYS00YjZiLWJiNDUtZjEwNzM4YzE1ZDhhXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-  ]
+      id: 8,
+      Title: "I Love You, Man",
+      Year: "2009",
+      imdbID: "tt1155056",
+      Type: "movie",
+      Poster: "https://m.media-amazon.com/images/M/MV5BMTU4MjI5NTEyNV5BMl5BanBnXkFtZTcwNjQ1NTMzMg@@._V1_SX300.jpg"
+    }
+  ]);
+  }, 1000);
+  });
 }

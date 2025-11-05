@@ -303,6 +303,37 @@ select{
     max-width: 200px;
 }
 
+.movies__loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    font-size: 48px;
+    color: rgb(173, 18, 18);
+}
+
+.movies__loading--spinner{
+    display: none !important;
+}
+
+.movies__loading .movies__loading--spinner {
+    display: block !important;
+}
+
+.fa-spinner{
+    animation: rotate 600ms linear infinite;
+}
+
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 1024px){
     .nav__links{
         display: none;
