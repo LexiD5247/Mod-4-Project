@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    />
-    <script>
-      scr = "index.js";
-    </script>
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"/>
+    <script src = "./index.js" defer ></script>
     <script
       src="https://kit.fontawesome.com/09ccc72bfc.js"
       crossorigin="anonymous"
@@ -55,7 +52,7 @@
               Find Your Next <br /><span class="red">Favorite Flick</span>
             </h1>
             <div class="header__btn">
-              <input
+              <input id = "searchInput"
                 type="text"
                 class="search__bar"
                 placeholder="Search movies..."/>
@@ -77,7 +74,7 @@
                 <h2 class="section__title movies__header--title">
                     All <span class="red">Movies</span>
                 </h2>
-                <select id="filter" onchange="'filterMovies(event)">
+                <select id="filter" onchange="'filterMovies(event)'" class="movies__header--filter"> 
                     <option value disabled selected>Sort</option>
                     <option value="A_TO_Z">A to Z</option>
                     <option value="Z_TO_A">Z to A</option>
@@ -86,7 +83,7 @@
                 </select>
             </div>
             <div class="movies">
-              
+
             </div>
             </div>
           </div>

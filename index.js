@@ -1,17 +1,21 @@
 function fetchMovies() {
   const moviesWrapper = document.querySelector('.movies');
-  
+
   const movies = getMovies();
-  console.log(movies);
-  
-  moviesWrapper.innerHTML = 
-  `<div class="movie">
+
+  const moviesHTML = movies.map((movie) => {
+     return `<div class="movie">
       <figure class="movie__img--wrapper">
-          <img class="movie__img" src= ${movies[0].Poster} alt="">
+          <img class="movie__img" src= "${movie.Poster}" alt="">
       </figure>
-      <div class="movie__title">Crazy Stupid Love</div>
-      <div class="movie__year">2011</div>
-  </div>`;
+      <div class="movie__title">${movie.Title}</div>
+      <div class="movie__year">${movie.Year}</div>
+  </div>`
+  }).join('');
+
+  moviesWrapper.innerHTML = moviesHTML
+  console.log(moviesHTML)
+  
 }
 
 setTimeout(() => {
@@ -27,7 +31,7 @@ function getMovies() {
       Year: "2011",
       imdbID: "tt1570728",
       Type: "movie",
-      Poster: "crazy_stupid_love.jpg"
+      Poster: "https://m.media-amazon.com/images/M/MV5BMTg2MjkwMTM0NF5BMl5BanBnXkFtZTcwMzc4NDg2NQ@@._V1_SX300.jpg"
     },
     {
       id: 2,
@@ -97,5 +101,5 @@ function getMovies() {
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BZTYyMTQ2MDAtMzYzYS00YjZiLWJiNDUtZjEwNzM4YzE1ZDhhXkEyXkFqcGc@._V1_SX300.jpg"
     },
-    ];
-} 
+  ]
+}
