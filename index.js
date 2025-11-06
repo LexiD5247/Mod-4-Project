@@ -1,6 +1,27 @@
-let movies;
+//https://www.omdbapi.com/?i=tt3896198&apikey=8738c5a0
+//let movies;
 
-async function fetchMovies(filter) {
+async function main() {
+  const movies = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=8738c5a0&s=love")
+  const moviesData = await movies.json();
+  const moviesWrapper = document.querySelector('.movies');
+  console.log(moviesData);
+  moviesWrapper.innerHTML = moviesData
+    moviesData
+    .map(
+      (movie) => `<div class="movie">
+      <figure class="movie__img--wrapper">
+          <img class="movie__img" src= "${movie.Poster}" alt="">
+      </figure>
+      <div class="movie__title">${movie.Title}</div>
+      <div class="movie__year">${movie.Year}</div>
+  </div>`
+    ).join("");
+}
+
+main();
+
+/*async function fetchMovies(filter) {
   const moviesWrapper = document.querySelector('.movies');
 
   moviesWrapper.classList += ' movies__loading'
@@ -118,4 +139,4 @@ function getMovies() {
   ]);
   }, 1000);
   });
-}
+}*/
