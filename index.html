@@ -56,8 +56,8 @@
                 type="text"
                 class="search__bar"
                 placeholder="Search movies..."
-                onchange="onSearchChange(event)"/>
-              <button class="header__search--btn" onclick="onSearchClick()" aria-label="Search">
+                />
+              <button id="searchButton" class="header__search--btn" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
@@ -75,7 +75,7 @@
                 <h2 class="section__title movies__header--title">
                     All <span class="red">Movies</span>
                 </h2>
-                <select id="filter" onchange="filterMovies(event)" class="movies__header--filter"> 
+                <select id="filter" class="movies__header--filter"> 
                     <option value disabled selected>Sort</option>
                     <option value="A_TO_Z">A to Z</option>
                     <option value="Z_TO_A">Z to A</option>
@@ -93,3 +93,4 @@
     </main>
   </body>
 </html>
+
