@@ -41,8 +41,8 @@ h1{
     background-color: rgba(173, 18, 18, 0.349);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-
+    max-width: 1200px;
+    justify-content: center;
 }
 
 
@@ -179,7 +179,6 @@ h1{
 
 .bg__img{
     width: 100%;
-    object-fit: cover;
     margin-top: 20px;
     z-index: -1;
     opacity: 0.8;
@@ -273,6 +272,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    max-height: 500px;
 }
 
 .movie__img--wrapper{
@@ -287,6 +287,8 @@ h1{
     font-size: 20px;
     margin-bottom: 8px;
     font-weight: 600;
+    text-align: center;
+    max-width: 240px;
 }
 
 .movie__year{
